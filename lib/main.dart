@@ -1,5 +1,8 @@
+import 'package:pizza_app/screens/orderpage.dart';
+import 'package:pizza_app/screens/splashscreen.dart';
+
 import 'barrel.dart';
-import 'package:firebase_core/firebase_core.dart';
+
 import 'firebase_options.dart';
 
 Future<void> main() async {
@@ -20,16 +23,20 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       initialRoute: '/',
       routes: {
-        '/': (context) => const MyLoginPage(),
+        '/': (context) => PizzaOrderPage(pizza: Pizza()),
+        '/login': (context) => const MyLoginPage(),
         '/register': (context) => const MyRegistrationPage(),
         '/homepage': (context) => const MyHomePage(),
+        // '/orderpage': (context) => PizzaOrderPage(
+        //       pizza: Pizza(),
+        //     ),
       },
       title: 'Flutter Demo',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      // home: const MyLoginPage(),
+      // home: const PizzaOrderPage(),
     );
   }
 }
