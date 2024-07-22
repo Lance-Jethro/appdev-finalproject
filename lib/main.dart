@@ -23,7 +23,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       initialRoute: '/',
       routes: {
-        '/': (context) => PizzaOrderPage(pizza: Pizza()),
+        '/': (context) => const PizzaOrderPage(),
         '/login': (context) => const MyLoginPage(),
         '/register': (context) => const MyRegistrationPage(),
         '/homepage': (context) => const MyHomePage(),

@@ -4,6 +4,7 @@ export 'package:flutter/gestures.dart';
 export 'package:pizza_app/screens/loginpage.dart';
 export 'package:pizza_app/screens/registrationpage.dart';
 export 'package:pizza_app/screens/homepage.dart';
+export 'package:pizza_app/screens/favorites.dart';
 
 export 'package:animated_splash_screen/animated_splash_screen.dart';
 export 'package:lottie/lottie.dart';
@@ -17,3 +18,7 @@ export 'package:pizza_app/widgets/pizza_circle.dart';
 export 'package:pizza_app/widgets/pizzatiles.dart';
 
 export 'package:pizza_app/data/pizzalist.dart';
+
+export 'package:shared_preferences/shared_preferences.dart';
+
+export 'dart:convert';
