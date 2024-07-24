@@ -120,123 +120,138 @@ class _MyRegistrationPageState extends State<MyRegistrationPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.orange,
       appBar: AppBar(
-        title: const Text('Registration Page'),
-        backgroundColor: Colors.green,
+        title: const Text('DoughDash'),
+        backgroundColor: Colors.red,
+        centerTitle: true,
       ),
       body: SingleChildScrollView(
-        child: Padding(
-          padding: const EdgeInsets.all(10.0),
-          child: Container(
-            height: 500,
-            decoration: BoxDecoration(
-              color: Colors.white,
-              borderRadius: BorderRadius.circular(20),
-              border: Border.all(
-                color: Colors.grey,
-                width: 0.1,
-              ),
-              boxShadow: [
-                BoxShadow(
-                  color: Colors.grey.withOpacity(0.2),
-                  spreadRadius: 7,
-                  blurRadius: 10,
-                ),
-              ],
+        child: Container(
+          constraints: BoxConstraints(
+            minHeight: 450,
+          ),
+          padding: EdgeInsets.all(20),
+          margin: EdgeInsets.all(40),
+          decoration: BoxDecoration(
+            color: Colors.white70,
+            borderRadius: BorderRadius.circular(20),
+            border: Border.all(
+              color: Colors.grey,
+              width: 0.1,
             ),
-            child: Column(
-              children: [
-                Padding(
-                  padding: const EdgeInsets.all(10.0),
-                  child: Center(
-                    child: Form(
-                      key: _signupKey,
-                      child: Column(
-                        children: [
-                          RegistrationTextFields(
-                            emailController: _emailSignupController,
-                            passwordController: _pwSignupController,
-                            confirmPasswordController: _pwConfirmController,
-                            emailValidator: _emailSignupValidator,
-                            passwordValidator: _pwSignUpValidator,
-                            confirmPasswordValidator: _pwConfirmValidator,
-                            obscureText: _obscureText,
-                            toggleObscureText: () {
-                              setState(() {
-                                _obscureText = !_obscureText;
-                              });
-                            },
-                            isChecked: _isChecked,
-                            onCheckBoxChanged: (value) {
-                              setState(() {
-                                _isChecked = value!;
-                              });
-                            },
-                          ),
-                          const SizedBox(height: 10),
-                          SizedBox(
-                            width: 800,
-                            height: 40,
-                            child: ElevatedButton(
-                              style: ElevatedButton.styleFrom(
-                                backgroundColor: Colors.green,
-                                foregroundColor: Colors.white,
-                                shadowColor: Colors.green,
-                                animationDuration:
-                                    const Duration(milliseconds: 10000),
-                                elevation: 10.0,
-                                textStyle: const TextStyle(fontSize: 20),
-                                shape: const BeveledRectangleBorder(
-                                  borderRadius: BorderRadius.all(Radius.zero),
-                                ),
+            boxShadow: [
+              BoxShadow(
+                color: Colors.grey.withOpacity(0.2),
+                spreadRadius: 7,
+                blurRadius: 10,
+              ),
+            ],
+          ),
+          child: Column(
+            children: [
+              Center(
+                child: Text(
+                  "Register",
+                  style: TextStyle(
+                    fontSize: 30,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ),
+              SizedBox(
+                height: 20,
+              ),
+              Padding(
+                padding: const EdgeInsets.all(10.0),
+                child: Center(
+                  child: Form(
+                    key: _signupKey,
+                    child: Column(
+                      children: [
+                        RegistrationTextFields(
+                          emailController: _emailSignupController,
+                          passwordController: _pwSignupController,
+                          confirmPasswordController: _pwConfirmController,
+                          emailValidator: _emailSignupValidator,
+                          passwordValidator: _pwSignUpValidator,
+                          confirmPasswordValidator: _pwConfirmValidator,
+                          obscureText: _obscureText,
+                          toggleObscureText: () {
+                            setState(() {
+                              _obscureText = !_obscureText;
+                            });
+                          },
+                          isChecked: _isChecked,
+                          onCheckBoxChanged: (value) {
+                            setState(() {
+                              _isChecked = value!;
+                            });
+                          },
+                        ),
+                        const SizedBox(height: 10),
+                        SizedBox(
+                          width: 800,
+                          height: 40,
+                          child: ElevatedButton(
+                            style: ElevatedButton.styleFrom(
+                              backgroundColor: Colors.blue,
+                              foregroundColor: Colors.black,
+                              shadowColor: Colors.blue,
+                              animationDuration:
+                                  const Duration(milliseconds: 10000),
+                              elevation: 10.0,
+                              textStyle: const TextStyle(fontSize: 20),
+                              shape: const BeveledRectangleBorder(
+                                borderRadius: BorderRadius.all(Radius.zero),
                               ),
-                              onPressed: () {
-                                setState(() {
-                                  String? emailError = _emailSignupValidator(
-                                      _emailSignupController.text);
-                                  String? pwError = _pwSignUpValidator(
-                                      _pwSignupController.text);
-                                  String? pwConfirmError = _pwConfirmValidator(
-                                      _pwConfirmController.text);
-                                  emailSignupErrorText = emailError;
-                                  pwSignupErrorText = pwError;
-                                  pwConfirmErrorText = pwConfirmError;
-                                });
-                                if (_signupKey.currentState!.validate()) {
-                                  _register(_emailSignupController.text,
-                                      _pwSignupController.text);
-                                }
-                              },
-                              child: const Text('Register'),
                             ),
+                            onPressed: () {
+                              setState(() {
+                                String? emailError = _emailSignupValidator(
+                                    _emailSignupController.text);
+                                String? pwError = _pwSignUpValidator(
+                                    _pwSignupController.text);
+                                String? pwConfirmError = _pwConfirmValidator(
+                                    _pwConfirmController.text);
+                                emailSignupErrorText = emailError;
+                                pwSignupErrorText = pwError;
+                                pwConfirmErrorText = pwConfirmError;
+                              });
+                              if (_signupKey.currentState!.validate()) {
+                                _register(_emailSignupController.text,
+                                    _pwSignupController.text);
+                              }
+                            },
+                            child: const Text('Register'),
                           ),
-                        ],
-                      ),
+                        ),
+                      ],
                     ),
                   ),
                 ),
-                const SizedBox(height: 40),
-                RichText(
-                  text: TextSpan(
-                    children: [
-                      const TextSpan(
-                        text: 'Already have an account? ',
-                        style: TextStyle(color: Colors.black),
-                      ),
-                      TextSpan(
-                        text: 'Sign in.',
-                        style: const TextStyle(color: Colors.blue),
-                        recognizer: TapGestureRecognizer()
-                          ..onTap = () {
-                            Navigator.pop(context);
-                          },
-                      ),
-                    ],
-                  ),
+              ),
+              const SizedBox(height: 20),
+              RichText(
+                text: TextSpan(
+                  children: [
+                    const TextSpan(
+                      text: 'Already have an account? ',
+                      style: TextStyle(color: Colors.black),
+                    ),
+                    TextSpan(
+                      text: 'Sign in.',
+                      style: const TextStyle(color: Colors.blue),
+                      recognizer: TapGestureRecognizer()
+                        ..onTap = () {
+                          Navigator.pop(context);
+                        },
+                    ),
+                  ],
                 ),
-                const SizedBox(height: 10),
-              ],
-            ),
+              ),
+              const SizedBox(height: 10),
+            ],
           ),
         ),
       ),

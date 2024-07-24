@@ -4,7 +4,7 @@ import 'package:pizza_app/barrel.dart';
 
 class PizzaTiles extends StatefulWidget {
   const PizzaTiles({
-    super.key,
+    Key? key,
     required this.title,
     required this.leading,
     required this.subtitle,
@@ -12,7 +12,8 @@ class PizzaTiles extends StatefulWidget {
     this.isFavorite = false,
     this.showFave = true,
     this.removeFave,
-  });
+    this.addToCart,
+  }) : super(key: key);
 
   final String title;
   final String leading;
@@ -21,6 +22,7 @@ class PizzaTiles extends StatefulWidget {
   final bool isFavorite;
   final bool showFave;
   final VoidCallback? removeFave;
+  final VoidCallback? addToCart;
 
   @override
   State<PizzaTiles> createState() => _PizzaTilesState();
@@ -82,23 +84,21 @@ class _PizzaTilesState extends State<PizzaTiles> {
     });
   }
 
-  void _removeFromFavorites() async {
+  void _addToCart() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
-    final favoritePizzas = prefs.getStringList('favoritePizzas') ?? [];
-    favoritePizzas
-        .removeWhere((item) => json.decode(item)['title'] == widget.title);
-    prefs.setStringList('favoritePizzas', favoritePizzas);
+    final pizza = {
+      'title': widget.title,
+      'leading': widget.leading,
+      'subtitle': widget.subtitle,
+      'price': widget.price,
+    };
 
-    setState(() {
-      _isFavorited = false;
-    });
-
-    if (widget.removeFave != null) {
-      widget.removeFave!();
-    }
+    List<String> cartedPizzas = prefs.getStringList('cartedPizzas') ?? [];
+    cartedPizzas.add(json.encode(pizza));
+    prefs.setStringList('cartedPizzas', cartedPizzas);
 
     ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(content: Text('${widget.title} removed from favorites.')),
+      SnackBar(content: Text('${widget.title} added to cart.')),
     );
   }
 
@@ -165,7 +165,7 @@ class _PizzaTilesState extends State<PizzaTiles> {
               children: [
                 if (!widget.showFave)
                   IconButton(
-                    onPressed: _removeFromFavorites,
+                    onPressed: widget.removeFave,
                     icon: const Icon(Icons.delete),
                   ),
                 if (widget.showFave)
@@ -177,8 +177,8 @@ class _PizzaTilesState extends State<PizzaTiles> {
                     onPressed: _toggleFavorite,
                   ),
                 IconButton(
-                  icon: const Icon(Icons.shopping_cart),
-                  onPressed: () {},
+                  icon: const Icon(Icons.add_shopping_cart),
+                  onPressed: _addToCart,
                 ),
               ],
             ),

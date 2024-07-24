@@ -1,6 +1,3 @@
-import 'package:pizza_app/screens/orderpage.dart';
-import 'package:pizza_app/screens/splashscreen.dart';
-
 import 'barrel.dart';
 
 import 'firebase_options.dart';
@@ -21,12 +18,13 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      initialRoute: '/',
+      initialRoute: '/homepage',
       routes: {
-        '/': (context) => const PizzaOrderPage(),
+        '/': (context) => const MySplashScreen(),
         '/login': (context) => const MyLoginPage(),
         '/register': (context) => const MyRegistrationPage(),
         '/homepage': (context) => const MyHomePage(),
+        '/cartpage': (context) => const CartPage(),
         // '/orderpage': (context) => PizzaOrderPage(
         //       pizza: Pizza(),
         //     ),

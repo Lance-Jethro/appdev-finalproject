@@ -13,7 +13,11 @@ class LoginTextFields extends StatefulWidget {
   final void Function(bool?) onCheckBoxChanged;
 
   const LoginTextFields({
+// <<<<<<< HEAD
     super.key,
+// =======
+    // Key? key,
+// >>>>>>> 84f99f8 (FROM MABINI, WORKING NA LAHAT)
     required this.emailController,
     required this.passwordController,
     required this.emailValidator,
@@ -22,7 +26,11 @@ class LoginTextFields extends StatefulWidget {
     required this.toggleObscureText,
     required this.isChecked,
     required this.onCheckBoxChanged,
+// <<<<<<< HEAD
   });
+// =======
+  // }) : super(key: key);
+// >>>>>>> 84f99f8 (FROM MABINI, WORKING NA LAHAT)
 
   @override
   State<LoginTextFields> createState() => _LoginTextFieldsState();
@@ -35,6 +43,10 @@ class _LoginTextFieldsState extends State<LoginTextFields> {
       children: [
         TextFormField(
           decoration: const InputDecoration(
+// <<<<<<< HEAD
+// =======
+            fillColor: Colors.white,
+// >>>>>>> 84f99f8 (FROM MABINI, WORKING NA LAHAT)
             border: OutlineInputBorder(),
             labelText: 'Email Address',
             prefixIcon: Icon(Icons.alternate_email),
@@ -46,6 +58,10 @@ class _LoginTextFieldsState extends State<LoginTextFields> {
         const SizedBox(height: 15),
         TextFormField(
           decoration: InputDecoration(
+// <<<<<<< HEAD
+// =======
+            fillColor: Colors.white,
+// >>>>>>> 84f99f8 (FROM MABINI, WORKING NA LAHAT)
             border: const OutlineInputBorder(),
             labelText: 'Password',
             prefixIcon: const Icon(Icons.lock),

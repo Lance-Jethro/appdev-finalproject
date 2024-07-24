@@ -9,11 +9,12 @@ class MySplashScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return AnimatedSplashScreen(
       splash: Center(
-        child: Lottie.asset('../Animation1721295704296.json'),
+        // child: Lottie.asset('assets/lottie/Animation1721295704296.json'),
+        child: Image.asset('assets/images/doughdash_logo.png'),
       ),
       splashIconSize: 200,
       nextScreen: const MyLoginPage(),
-      backgroundColor: Colors.blueAccent,
+      backgroundColor: Colors.orange,
       splashTransition: SplashTransition.fadeTransition,
       animationDuration: const Duration(seconds: 2),
     );

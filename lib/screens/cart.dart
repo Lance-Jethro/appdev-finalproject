@@ -65,6 +65,8 @@ class _CartPageState extends State<CartPage> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('My Cart'),
+        centerTitle: true,
+        backgroundColor: Colors.red,
       ),
       body: Column(
         children: [
@@ -100,24 +102,27 @@ class _CartPageState extends State<CartPage> {
               },
             ),
           ),
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.stretch,
-              children: [
-                Text(
-                  'Total: ₱${_calculateTotalPrice().toStringAsFixed(2)}',
-                  style: const TextStyle(
-                    fontSize: 20,
-                    fontWeight: FontWeight.bold,
+          Container(
+            color: Colors.red,
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: [
+                  Text(
+                    'Total: ₱${_calculateTotalPrice().toStringAsFixed(2)}',
+                    style: const TextStyle(
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
-                ),
-                const SizedBox(height: 8),
-                ElevatedButton(
-                  onPressed: _orderPizzas,
-                  child: const Text('Order Now'),
-                ),
-              ],
+                  const SizedBox(height: 8),
+                  ElevatedButton(
+                    onPressed: _orderPizzas,
+                    child: const Text('Order Now'),
+                  ),
+                ],
+              ),
             ),
           ),
         ],
