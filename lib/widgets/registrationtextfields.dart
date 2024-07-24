@@ -33,6 +33,8 @@ class RegistrationTextFields extends StatelessWidget {
       children: [
         TextFormField(
           decoration: const InputDecoration(
+            fillColor: Colors.white,
+            border: OutlineInputBorder(),
             labelText: 'Enter your Email Address',
             prefixIcon: Icon(Icons.alternate_email),
           ),
@@ -43,6 +45,8 @@ class RegistrationTextFields extends StatelessWidget {
         const SizedBox(height: 15),
         TextFormField(
           decoration: InputDecoration(
+            fillColor: Colors.white,
+            border: OutlineInputBorder(),
             labelText: 'Enter your Password',
             prefixIcon: const Icon(Icons.lock),
             suffixIcon: IconButton(
@@ -57,6 +61,8 @@ class RegistrationTextFields extends StatelessWidget {
         const SizedBox(height: 15),
         TextFormField(
           decoration: InputDecoration(
+            fillColor: Colors.white,
+            border: OutlineInputBorder(),
             labelText: 'Confirm password',
             prefixIcon: const Icon(Icons.lock),
             suffixIcon: IconButton(
@@ -76,7 +82,12 @@ class RegistrationTextFields extends StatelessWidget {
               value: isChecked,
               onChanged: onCheckBoxChanged,
             ),
-            const Text("I have agreed to the terms and conditions."),
+            Flexible(
+              child: const Text(
+                "I have agreed to the terms and conditions.",
+                softWrap: true,
+              ),
+            ),
           ],
         ),
       ],
