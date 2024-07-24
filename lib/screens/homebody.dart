@@ -12,8 +12,8 @@ class Homebody extends StatelessWidget {
             alignment: Alignment.topLeft,
             height: MediaQuery.of(context).size.height * 0.20,
             width: MediaQuery.of(context).size.width * .98,
-            padding: EdgeInsets.all(10),
-            decoration: BoxDecoration(
+            padding: const EdgeInsets.all(10),
+            decoration: const BoxDecoration(
               borderRadius: BorderRadius.all(
                 Radius.circular(10.0),
               ),
@@ -23,7 +23,7 @@ class Homebody extends StatelessWidget {
               children: [
                 Container(
                   alignment: Alignment.topLeft,
-                  child: Text(
+                  child: const Text(
                     "Eat Fresh Pizza",
                     style: TextStyle(
                       fontSize: 40,
@@ -34,7 +34,7 @@ class Homebody extends StatelessWidget {
                 ),
                 Container(
                   alignment: Alignment.topLeft,
-                  child: Text(
+                  child: const Text(
                     "Our daily fresh pizzas",
                     style: TextStyle(
                       fontSize: 20,
@@ -58,7 +58,7 @@ class Homebody extends StatelessWidget {
             child: Row(
               children: [
                 Container(
-                  decoration: BoxDecoration(
+                  decoration: const BoxDecoration(
                     color: Colors.yellow,
                     borderRadius: BorderRadius.all(
                       Radius.circular(10.0),
@@ -76,7 +76,7 @@ class Homebody extends StatelessWidget {
                 Column(
                   children: [
                     Container(
-                      decoration: BoxDecoration(
+                      decoration: const BoxDecoration(
                         color: Colors.yellow,
                         borderRadius: BorderRadius.all(
                           Radius.circular(10.0),
@@ -92,7 +92,7 @@ class Homebody extends StatelessWidget {
                           bottom: MediaQuery.of(context).size.height * .025),
                     ),
                     Container(
-                      decoration: BoxDecoration(
+                      decoration: const BoxDecoration(
                         color: Colors.yellow,
                         borderRadius: BorderRadius.all(
                           Radius.circular(10.0),
@@ -117,7 +117,7 @@ class Homebody extends StatelessWidget {
             child: Row(
               children: [
                 Container(
-                  decoration: BoxDecoration(
+                  decoration: const BoxDecoration(
                     color: Colors.yellow,
                     borderRadius: BorderRadius.all(
                       Radius.circular(10.0),
@@ -134,7 +134,7 @@ class Homebody extends StatelessWidget {
                   ),
                 ),
                 Container(
-                  decoration: BoxDecoration(
+                  decoration: const BoxDecoration(
                     color: Colors.yellow,
                     borderRadius: BorderRadius.all(
                       Radius.circular(10.0),

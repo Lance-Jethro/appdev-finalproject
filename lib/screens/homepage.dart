@@ -11,9 +11,9 @@ class _MyHomePageState extends State<MyHomePage> {
   int currentIndex = 0;
 
   final List<Widget> _screen = [
-    Homebody(),
-    orderBody(),
-    favoriteBody(),
+    const Homebody(),
+    const orderBody(),
+    const favoriteBody(),
   ];
 
   void onDrawerItemTap(int index) {
@@ -30,9 +30,9 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         backgroundColor: Colors.red,
         centerTitle: true,
-        title: Text(
+        title: const Text(
           "DoughDash",
-          style: const TextStyle(
+          style: TextStyle(
             color: Colors.black,
           ),
         ),
@@ -41,7 +41,7 @@ class _MyHomePageState extends State<MyHomePage> {
             onPressed: () {
               Navigator.pushNamed(context, "/cartpage");
             },
-            icon: Icon(Icons.shopping_cart_checkout),
+            icon: const Icon(Icons.shopping_cart_checkout),
           )
         ],
       ),

@@ -128,11 +128,11 @@ class _MyRegistrationPageState extends State<MyRegistrationPage> {
       ),
       body: SingleChildScrollView(
         child: Container(
-          constraints: BoxConstraints(
+          constraints: const BoxConstraints(
             minHeight: 450,
           ),
-          padding: EdgeInsets.all(20),
-          margin: EdgeInsets.all(40),
+          padding: const EdgeInsets.all(20),
+          margin: const EdgeInsets.all(40),
           decoration: BoxDecoration(
             color: Colors.white70,
             borderRadius: BorderRadius.circular(20),
@@ -150,7 +150,7 @@ class _MyRegistrationPageState extends State<MyRegistrationPage> {
           ),
           child: Column(
             children: [
-              Center(
+              const Center(
                 child: Text(
                   "Register",
                   style: TextStyle(
@@ -159,7 +159,7 @@ class _MyRegistrationPageState extends State<MyRegistrationPage> {
                   ),
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
               Padding(

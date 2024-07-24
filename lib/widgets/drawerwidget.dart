@@ -2,10 +2,10 @@ import 'package:pizza_app/barrel.dart';
 
 class DrawerWidget extends StatelessWidget {
   const DrawerWidget({
-    Key? key,
+    super.key,
     required this.currentIndex,
     required this.onDrawerItemTap,
-  }) : super(key: key);
+  });
 
   final int currentIndex;
   final Function(int) onDrawerItemTap;
@@ -16,17 +16,17 @@ class DrawerWidget extends StatelessWidget {
       context: context,
       builder: (BuildContext context) {
         return AlertDialog(
-          title: Text("Logout"),
-          content: Text("Are you sure you want to logout?"),
+          title: const Text("Logout"),
+          content: const Text("Are you sure you want to logout?"),
           actions: <Widget>[
             TextButton(
-              child: Text("Cancel"),
+              child: const Text("Cancel"),
               onPressed: () {
                 Navigator.of(context).pop(false); // Return false on cancel
               },
             ),
             TextButton(
-              child: Text("Logout"),
+              child: const Text("Logout"),
               onPressed: () {
                 Navigator.of(context).pop(true); // Return true on confirm
               },
@@ -56,12 +56,12 @@ class DrawerWidget extends StatelessWidget {
             children: [
               Container(
                 height: 70,
-                child: DrawerHeader(
-                  child: Text("HI! nameeeee"), // Replace with actual user name
+                child: const DrawerHeader(
+                  child: Text("Welcome!"), // Replace with actual user name
                 ),
               ),
               Container(
-                padding: EdgeInsets.all(20),
+                padding: const EdgeInsets.all(20),
                 color: Colors.white,
                 child: Column(
                   children: [

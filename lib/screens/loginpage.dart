@@ -2,7 +2,7 @@
 import 'package:pizza_app/barrel.dart';
 
 class MyLoginPage extends StatefulWidget {
-  const MyLoginPage({Key? key}) : super(key: key);
+  const MyLoginPage({super.key});
 
   @override
   State<MyLoginPage> createState() => _MyLoginPageState();
@@ -151,7 +151,7 @@ class _MyLoginPageState extends State<MyLoginPage> {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
             Center(
@@ -161,11 +161,11 @@ class _MyLoginPageState extends State<MyLoginPage> {
               ),
             ),
             Container(
-              margin: EdgeInsets.fromLTRB(40, 20, 40, 40),
-              constraints: BoxConstraints(
+              margin: const EdgeInsets.fromLTRB(40, 20, 40, 40),
+              constraints: const BoxConstraints(
                 minHeight: 300,
               ),
-              padding: EdgeInsets.all(15),
+              padding: const EdgeInsets.all(15),
               decoration: BoxDecoration(
                 color: Colors.white70,
                 borderRadius: BorderRadius.circular(20),
@@ -223,26 +223,26 @@ class _MyLoginPageState extends State<MyLoginPage> {
                         ),
                       ),
                       const SizedBox(height: 15),
-                      SizedBox(
-                        width: 800,
-                        height: 40,
-                        child: ElevatedButton.icon(
-                          icon: const Icon(Icons.mail),
-                          style: ElevatedButton.styleFrom(
-                            backgroundColor: Colors.red,
-                            foregroundColor: Colors.white,
-                            elevation: 5.0,
-                            textStyle: const TextStyle(fontSize: 20),
-                            shape: const BeveledRectangleBorder(
-                              borderRadius: BorderRadius.all(Radius.zero),
-                            ),
-                          ),
-                          onPressed: () {
-                            // Google sign in logic
-                          },
-                          label: const Text('Sign In with Google'),
-                        ),
-                      ),
+                      // SizedBox(
+                      //   width: 800,
+                      //   height: 40,
+                      //   child: ElevatedButton.icon(
+                      //     icon: const Icon(Icons.mail),
+                      //     style: ElevatedButton.styleFrom(
+                      //       backgroundColor: Colors.red,
+                      //       foregroundColor: Colors.white,
+                      //       elevation: 5.0,
+                      //       textStyle: const TextStyle(fontSize: 20),
+                      //       shape: const BeveledRectangleBorder(
+                      //         borderRadius: BorderRadius.all(Radius.zero),
+                      //       ),
+                      //     ),
+                      //     onPressed: () {
+                      //       // Google sign in logic
+                      //     },
+                      //     label: const Text('Sign In with Google'),
+                      //   ),
+                      // ),
                       const SizedBox(height: 30),
                       RichText(
                         text: TextSpan(
